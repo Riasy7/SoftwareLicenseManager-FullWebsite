@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing - AJA Software</title>
+    <link rel="icon" href="images/aja-high-resolution-logo.png" type="image/png">
+    <!--Link for bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!--Link for our own styles-->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!--Header-->
+    <header class="d-flex flex-wrap align-items-center justify-content-between py-3 mb-4 border-bottom">
+        <div class="col-md-3 mb-2 mb-md-0">
+          <a href="/" class="d-inline-flex link-body-emphasis text-decoration-none">
+            <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
+            <span class="fs-4">AJA Software</span>
+          </a>
+        </div>
+        <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+          <li><a href="/" class="nav-link px-2 link-secondary active">Home</a></li>
+          <% if (status === 'no') { %>
+          <li>
+            <a class="nav-link px-2 dropdown-toggle" role="button" id="aboutDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                Features
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+                <li><a class="dropdown-item" href="/login">Login</a></li>
+                <li><a class="dropdown-item" href="/signup">Sign-up</a></li>
+              </ul>
+          </li>
+          <% } else if (status === 'client') { %>
+          <li>
+            <a class="nav-link px-2 dropdown-toggle" role="button" id="aboutDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                Your Licenses
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+                <li><a class="dropdown-item" href="/findserialnumber">Add a serial number</a></li>
+                <li><a class="dropdown-item" href="/softwarelicenses">Licenses' Dashboard</a></li>
+              </ul>
+          </li>
+          <% } else { %>
+          <li>
+            <a class="nav-link px-2 dropdown-toggle" role="button" id="aboutDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                Features
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+                <li><a class="dropdown-item" href="/manage_clients">Client's Account</a></li>
+                <li><a class="dropdown-item" href="/serialnumberhandling">Serial Number Handling</a></li>
+                <li><a class="dropdown-item" href="/contactpage">Contact Clients</a></li>
+              </ul>
+          </li>
+          <% } %>
+          <li><a href="/pricing" class="nav-link px-2">Pricing</a></li>
+          <li><a href="/faq" class="nav-link px-2">FAQs</a></li>
+          <li class="dropdown">
+            <a class="nav-link px-2 dropdown-toggle" role="button" id="aboutDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+              About
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+              <li><a class="dropdown-item" href="/about#ourTeam">Our Team</a></li>
+              <li><a class="dropdown-item" href="/about#ourJourney">Our journey</a></li>
+              <li><a class="dropdown-item" href="/about#contactUs">Contact Us</a></li>
+            </ul>
+          </li>
+        </ul>
+        <% if (status === 'no') { %>
+        <div class="col-md-3 text-end pe-3">
+          <a href="/login" class="btn btn-outline-primary me-2">Log in</a>
+          <a href="/signup" class="btn btn-primary">Sign-up</a>
+        </div>
+        <% } if (status === 'provider' || status === 'client') { %>
+          <div class="col-md-3 text-end pe-3">
+            <div class="dropdown">
+              <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="<%= user.profilePicture %>" alt="User Profile Picture" class="rounded-circle me-2" style="width: 40px; height: 40px;">              
+              </a> 
+              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                <li><a class="dropdown-item" href="/user-dashboard">Account Settings</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="/logout">Logout</a></li>
+              </ul>
+            </div>
+          </div>
+        <% } %>
+      </header>
+      <!--Main Content-->
+        <main>
+            <!-- Section 1: Pricing -->
+      <section>
+        <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+            <h1 class="display-4 fw-normal text-body-emphasis">Prices</h1>
+            <p class="text-align: justify">Unlock the full potential of our service! Choose between Free, Pro, and Elite plans. While all options offer great value, our Elite plan delivers an unparalleled experience with exclusive features and premium support. Elevate your experience and enjoy the ultimate benefits by selecting the Elite package today!</p>
+        </div>
+    </section>
+
+    <!-- Section 2: Prices -->
+    <section>
+        <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+            <!-- Free -->
+            <div class="col">
+                <div class="card mb-4 rounded-3 shadow-sm">
+                    <div class="card-header py-3">
+                        <h4 class="my-0 fw-normal">Free</h4>
+                    </div>
+                    <div class="card-body">
+                        <h1 class="card-title pricing-card-title">$0<small class="text-body-secondary fw-light">/mo</small></h1>
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li>1 users included</li>
+                            <li>20 software licenses</li>
+                        </ul>
+                        <button type="button" class="w-100 btn btn-lg btn-outline-primary">Sign up for free</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Pro -->
+            <div class="col">
+                <div class="card mb-4 rounded-3 shadow-sm">
+                    <div class="card-header py-3">
+                        <h4 class="my-0 fw-normal">Pro</h4>
+                    </div>
+                    <div class="card-body">
+                        <h1 class="card-title pricing-card-title">$15<small class="text-body-secondary fw-light">/mo</small></h1>
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li>3 users included</li>
+                            <li>50 software licenses</li>
+                        </ul>
+                        <button type="button" class="w-100 btn btn-lg btn-primary">Get started</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Company package -->
+            <div class="col">
+                <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                    <div class="card-header py-3 text-bg-primary border-primary">
+                        <h4 class="my-0 fw-normal">Company Package</h4>
+                    </div>
+                    <div class="card-body">
+                        <h1 class="card-title pricing-card-title">$35<small class="text-body-secondary fw-light">/mo</small></h1>
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li>unlimited users included</li>
+                            <li>unlimited software licenses</li>
+                        </ul>
+                        <button type="button" class="w-100 btn btn-lg btn-primary">Contact us</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Implementations -->
+    
+    <section>
+            <!--checkmark icon-->
+            <svg style="display: none;">
+                <symbol id="check" viewBox="0 0 24 24">
+                    <path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/>
+                </symbol>
+            </svg>
+        <h2 class="display-6 text-center mb-4">Compare plans</h2>
+        <div class="table-responsive">
+          <table class="table text-center">
+            <thead>
+            <tr>
+                <th style="width: 34%;"></th>
+                <th style="width: 22%;">Free</th>
+                <th style="width: 22%;">Pro</th>
+                <th style="width: 22%;">Elite</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th scope="row" class="text-start">Public</th>
+                <td><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg></td>
+                <td><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg></td>
+                <td><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg></td>
+            </tr>
+            <tr>
+                <th scope="row" class="text-start">Private</th>
+                <td></td>
+                <td><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg></td>
+                <td><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg></td>
+            </tr>
+            </tbody>
+    
+            <tbody>
+            <tr>
+                <th scope="row" class="text-start">Permissions</th>
+                <td><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg></td>
+                <td><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg></td>
+                <td><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg></td>
+            </tr>
+            <tr>
+                <th scope="row" class="text-start">Sharing</th>
+                <td></td>
+                <td><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg></td>
+                <td><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg></td>
+            </tr>
+            <tr>
+                <th scope="row" class="text-start">Unlimited members</th>
+                <td></td>
+                <td></td>
+                <td><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg></td>
+            </tr>
+            <tr>
+                <th scope="row" class="text-start">Extra security</th>
+                <td></td>
+                <td></td>
+                <td><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg></td>
+            </tr>
+            </tbody>
+        </table>
+        </div>
+    </section>
+        </main>
+    <footer>
+        <p>Copyright © 2023 AJA Software Licensing Company</p>
+    </footer>
+    <script src="/js/profile.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

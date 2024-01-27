@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - AJA Software</title>
+    <link rel="icon" href="images/aja-high-resolution-logo.png" type="image/png">
+    <!--Link for bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!--Link for our own styles-->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!--Header-->
+    <header class="d-flex flex-wrap align-items-center justify-content-between py-3 mb-4 border-bottom">
+      <div class="col-md-3 mb-2 mb-md-0">
+        <a href="/" class="d-inline-flex link-body-emphasis text-decoration-none">
+          <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
+          <span class="fs-4">AJA Software</span>
+        </a>
+      </div>
+      <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+        <li><a href="/" class="nav-link px-2 link-secondary active">Home</a></li>
+        <% if (status === 'no') { %>
+        <li>
+          <a class="nav-link px-2 dropdown-toggle" role="button" id="aboutDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+              Features
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+              <li><a class="dropdown-item" href="/login">Login</a></li>
+              <li><a class="dropdown-item" href="/signup">Sign-up</a></li>
+            </ul>
+        </li>
+        <% } else if (status === 'client') { %>
+        <li>
+          <a class="nav-link px-2 dropdown-toggle" role="button" id="aboutDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+              Your Licenses
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+              <li><a class="dropdown-item" href="/findserialnumber">Add a serial number</a></li>
+              <li><a class="dropdown-item" href="/softwarelicenses">Licenses' Dashboard</a></li>
+            </ul>
+        </li>
+        <% } else { %>
+        <li>
+          <a class="nav-link px-2 dropdown-toggle" role="button" id="aboutDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+              Features
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+              <li><a class="dropdown-item" href="/manage_clients">Client's Account</a></li>
+              <li><a class="dropdown-item" href="/serialnumberhandling">Serial Number Handling</a></li>
+              <li><a class="dropdown-item" href="/contactpage">Contact Clients</a></li>
+            </ul>
+        </li>
+        <% } %>
+        <li><a href="/pricing" class="nav-link px-2">Pricing</a></li>
+        <li><a href="/faq" class="nav-link px-2">FAQs</a></li>
+        <li class="dropdown">
+          <a class="nav-link px-2 dropdown-toggle" role="button" id="aboutDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+            About
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+            <li><a class="dropdown-item" href="/about#ourTeam">Our Team</a></li>
+            <li><a class="dropdown-item" href="/about#ourJourney">Our journey</a></li>
+            <li><a class="dropdown-item" href="/about#contactUs">Contact Us</a></li>
+          </ul>
+        </li>
+      </ul>
+      <% if (status === 'no') { %>
+      <div class="col-md-3 text-end pe-3">
+        <a href="/login" class="btn btn-outline-primary me-2">Log in</a>
+        <a href="/signup" class="btn btn-primary">Sign-up</a>
+      </div>
+      <% } if (status === 'provider' || status === 'client') { %>
+        <div class="col-md-3 text-end pe-3">
+          <div class="dropdown">
+            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+              <img src="<%= user.profilePicture %>" alt="User Profile Picture" class="rounded-circle me-2" style="width: 40px; height: 40px;">              
+            </a> 
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+              <li><a class="dropdown-item" href="/user-dashboard">Account Settings</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="/logout">Logout</a></li>
+            </ul>
+          </div>
+        </div>
+      <% } %>
+    </header>
+          
+        <!--Our Team-->
+        <div class="team-container" id="ourTeam">
+            <h2 class="fw-normal text-center">Our Team</h2>
+            <hr class="featurette-divider">
+            <div class="team-row">
+                <div class="team-member text-center">
+                    <img class="bd-placeholder-img rounded-circle" src="images/ourteam_ahmad.png" alt="Ahmad Saadawi" width="140" height="140">
+                    <h2 class="fw-normal">Ahmad Saadawi</h2>
+                    <p>Ahmad is a software engineering student at Concordia University, currently pursuing a Bachelor's degree in Software Engineering and one of 
+                        the founders of AJA Software. Ahmad specializes in both front-end and back-end development, contributing expertise in creating user-friendly 
+                        interfaces and robust software systems.</p>
+                </div>
+                <div class="team-member text-center">
+                    <img class="bd-placeholder-img rounded-circle" src="images/ourteam_jenn.png" alt="Jennifer Nguyen" width="140" height="140">
+                    <h2 class="fw-normal">Jennifer Nguyen</h2>
+                    <p>Jennifer is a software engineering student at Concordia University, currently pursuing a Bachelor's degree in Software Engineering and one of 
+                        the founders of AJA Software. Jennifer specializes in both front-end and back-end development, contributing expertise in creating user-friendly 
+                        interfaces and robust software systems.</p>
+                </div>
+            </div>
+            <div class="team-row">
+                <div class="team-member centered text-center">
+                    <img class="bd-placeholder-img rounded-circle" src="images/ourteam_andro.png" alt="Andro Razk" width="140" height="140">
+                    <h2 class="fw-normal">Andro Razk</h2>
+                    <p>Andro is a software engineering student at Concordia University, currently pursuing a Bachelor's degree in Software Engineering and one of 
+                        the founders of AJA Software. Andro specializes in both front-end and back-end development, contributing expertise in creating user-friendly 
+                        interfaces and robust software systems.</p>
+                </div>
+            </div>
+        </div>
+
+        <!--Our Journey-->
+        <div class="journey-container" id="ourJourney">
+            <h2 class="fw-normal text-center">Our Journey</h2>
+            <hr class="featurette-divider">
+            <p class="lead text-center">Our journey as the founders of AJA Software is rooted in our shared passion for software engineering, which began right here in Montreal, Canada. Each one of us, [Your Name] included, hails from this vibrant city, and it's where we first embarked on our individual paths to software expertise. We found our common ground during our time at Concordia University, where we pursued Bachelor's degrees in Software Engineering.
+
+                Our paths truly converged during the "SOEN287 - Web Programming" class, a pivotal moment in our journey. It was here that we not only honed our skills in web development but also discovered our shared vision for creating innovative software solutions. Our professor entrusted us with a challenging project, which was a turning point in our collaboration. This project ignited our collective creativity, and the successful completion of it laid the foundation for AJA Software.
+        </div>
+       
+        <!--Contact Us-->
+        <div class="contact-container" id="contactUs">
+            <h2 class="fw-normal text-center">Contact Us</h2>
+            <hr class="featurette-divider">
+            <form>
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name" placeholder="Your Name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" placeholder="Your Email">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea class="form-control" id="message" rows="6" placeholder="Your Message"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    <footer>
+        <p>Copyright © 2023 AJA Software Licensing Company</p>
+    </footer>
+    <!--Script for bootstrap-->
+    <script src="/js/profile.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

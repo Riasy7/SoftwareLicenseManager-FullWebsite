@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - AJA Software</title>
+    <link rel="icon" href="aja-high-resolution-logo.png" type="image/png">
+    <!--Link for bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!--Link for our own styles-->
+    <link rel="stylesheet" href="css/styles.css">
+    <script src ="js/profile.js"></script>
+</head>
+<body>
+    <!--Header-->
+    <header class="d-flex flex-wrap align-items-center justify-content-between py-3 mb-4 border-bottom">
+        <div class="col-md-3 mb-2 mb-md-0">
+          <a href="/" class="d-inline-flex link-body-emphasis text-decoration-none">
+            <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
+            <span class="fs-4">AJA Software</span>
+          </a>
+        </div>
+        <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+          <li><a href="/" class="nav-link px-2 link-secondary active">Home</a></li>
+          <li>
+            <a class="nav-link px-2 dropdown-toggle" role="button" id="aboutDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                Features
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+                <li><a class="dropdown-item" href="/manage_clients">Client's Account</a></li>
+                <li><a class="dropdown-item" href="/handling">Serial Number Handling</a></li>
+                <li><a class="dropdown-item" href="/contactpage">Contact Clients</a></li>
+              </ul>
+          </li>
+          <li><a href="/pricing" class="nav-link px-2">Pricing</a></li>
+          <li><a href="/faq" class="nav-link px-2">FAQs</a></li>
+          <li class="dropdown">
+            <a class="nav-link px-2 dropdown-toggle" href="#" role="button" id="aboutDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+              About
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+              <li><a class="dropdown-item" href="/about#ourTeam">Our Team</a></li>
+              <li><a class="dropdown-item" href="/about#ourJourney">Our journey</a></li>
+              <li><a class="dropdown-item" href="/about#contactUs">Contact Us</a></li>
+            </ul>
+          </li>
+        </ul>
+        <div class="col-md-3 text-end pe-3">
+          <div class="dropdown">
+            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+              <img src="<%= user.profilePicture %>" alt="User Profile Picture" class="rounded-circle me-2" style="width: 40px; height: 40px;">              
+            </a> 
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+              <li><a class="dropdown-item" href="/user-dashboard">Account Settings</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="/logout">Logout</a></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+
+      <main>
+
+        <section class="py-5 text-center container">
+          <div class="row py-lg-5">
+            <div class="col-lg-6 col-md-8 mx-auto">
+              <h1 class="fw-light">Welcome Home.</h1>
+              <p class="lead text-body-secondary">Below are features that you, the software provider, can use to cater to your clients' needs.</p>
+            </div>
+          </div>
+        </section>
+        <section>
+        <div class="album py-5 bg-body-tertiary">
+          <div class="container">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+              <div class="col">
+                <div class="card shadow-sm">
+                  <img class="bd-placeholder-img card-img-top" src="manageclients.jpg" alt="Client's Accounts" width="100%" height="225">
+                  <div class="card-body">
+                    <p class="card-text">Click to see your client list.</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div class="btn-group">
+                        <a href="/manage_clients" class="btn btn-sm btn-outline-secondary">View</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card shadow-sm">
+                  <img class="bd-placeholder-img card-img-top" src="serialnumber.jpg" alt="Serial Numbers" width="100%" height="225">
+                  <div class="card-body">
+                    <p class="card-text">Click here to manage serial numbers.</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div class="btn-group">
+                        <a href="/handling" class="btn btn-sm btn-outline-secondary">View</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card shadow-sm">
+                  <img class="bd-placeholder-img card-img-top" src="contact.jpg" alt="Contact Client's" width="100%" height="225">
+                  <div class="card-body">
+                    <p class="card-text">Click here to contact your clients.</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div class="btn-group">
+                        <a href="/contactpage" class="btn btn-sm btn-outline-secondary">View</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      </main>
+
+      <footer>
+        <p>Copyright © 2023 AJA Software Licensing Company</p>
+    </footer>
+    <script src ="js/profile.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+   </body>
+</html>

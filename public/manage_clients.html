@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Clients - AJA Software</title>
+    <link rel="icon" href="aja-high-resolution-logo.png" type="image/png">
+    <!--Link for bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!--Link for our own styles-->
+    <link rel="stylesheet" href="css/styles.css">
+    
+</head>
+<body>
+    <!--Header-->
+    <header class="d-flex flex-wrap align-items-center justify-content-between py-3 mb-4 border-bottom">
+        <div class="col-md-3 mb-2 mb-md-0">
+          <a href="/" class="d-inline-flex link-body-emphasis text-decoration-none">
+            <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
+            <span class="fs-4">AJA Software</span>
+          </a>
+        </div>
+        <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+          <li><a href="/" class="nav-link px-2">Home</a></li>
+          <li>
+            <a class="nav-link px-2 dropdown-toggle link-secondary active" role="button" id="aboutDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                Features
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+                <li><a class="dropdown-item" href="/manage_clients">Client's Account</a></li>
+                <li><a class="dropdown-item" href="/handling">Serial Number Handling</a></li>
+                <li><a class="dropdown-item" href="/contactpage">Contact Clients</a></li>
+              </ul>
+          </li>
+          
+          <li><a href="/faq" class="nav-link px-2">FAQs</a></li>
+          <li class="dropdown">
+            <a class="nav-link px-2 dropdown-toggle" href="#" role="button" id="aboutDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+              About
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+              <li><a class="dropdown-item" href="/about#ourTeam">Our Team</a></li>
+              <li><a class="dropdown-item" href="/about#ourJourney">Our journey</a></li>
+              <li><a class="dropdown-item" href="/about#contactUs">Contact Us</a></li>
+            </ul>
+          </li>
+        </ul>
+        <div class="col-md-3 text-end pe-3">
+            <div class="dropdown">
+              <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="<%= user.profilePicture %>" alt="User Profile Picture" class="rounded-circle me-2" style="width: 40px; height: 40px;">              
+              </a> 
+              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                <li><a class="dropdown-item" href="/user-dashboard">Account Settings</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="/logout">Logout</a></li>
+              </ul>
+            </div>
+          </div>
+      </header>
+      
+      <div class="form-container">
+        <div class="form-card">
+            <div class="form-card-header">
+                <h4>Client Manager</h4>
+            </div>
+            <div class="form-card-body">
+                <form>
+                    <div class="form-group">
+                        <label for="clientName" class="bold-label">Client Email:</label>
+                        <input type="text" id="clientName" name="clientName" placeholder="Enter client email">
+                    </div>
+                    <div class="form-group">
+                        <a href="/managespecific_client" class="btn btn-primary" type="submit">Submit</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>Copyright © 2023 AJA Software Licensing Company</p>
+    </footer>
+    <!--Script for bootstrap-->
+    <script src ="js/profile.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+{
+  "name": "aja_website",
+  "version": "1.0.0",
+  "description": "This project is a Software Licensing Manager Website. It incorporates bits of code from Bootstrap, which is licensed under the MIT License.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ahmad",
+  "license": "ISC",
+  "dependencies": {
+    "@emailjs/browser": "^3.11.0",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.2",
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^16.3.1",
+    "ejs": "^3.1.9",
+    "emailjs": "^4.0.3",
+    "express": "^4.18.2",
+    "g": "^2.0.1",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^1.4.5-lts.1",
+    "mysql": "^2.18.1",
+    "nodemon": "^2.0.22"
+  },
+  "keywords": []
+}
