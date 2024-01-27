@@ -2,6 +2,137 @@
 
 This project is a comprehensive Software Licensing Manager Website. Express and Node.js are thouroughly used to create the back end of this website. If you wish to use this website and run the back-end, with the SQL db, add all the dependencies to your project and please refer to the below instructions.
 
+However, before hopping into the instructions, here is a quick rundown/explanation or even just an introduction to some EJS concepts to help you utilize it if you are new to it or to increase your knowledge on it.
+
+## Understanding EJS (Embedded JavaScript)
+
+### What is EJS?
+
+EJS, or Embedded JavaScript, is a templating engine for JavaScript that allows dynamic content rendering within HTML files. It enables you to embed JavaScript code directly into your HTML markup, making it easier to generate dynamic HTML content on the server side.
+
+### Why Use EJS?
+
+1. **Dynamic Content:**
+   - EJS allows you to inject dynamic data directly into your HTML templates, making it easier to create web pages with content that changes based on variables, user input, or server-side logic.
+
+2. **Code Reusability:**
+   - EJS supports reusable templates, enabling you to create modular components that can be included across multiple pages. This promotes code organization and reduces redundancy.
+
+3. **Integrating JavaScript Logic:**
+   - With EJS, you can embed JavaScript logic directly into your HTML, allowing you to execute server-side code and generate dynamic content before sending it to the client's browser.
+
+4. **Expressive Syntax:**
+   - EJS uses a simple and expressive syntax, resembling traditional HTML with added flexibility. It strikes a balance between ease of use and powerful features.
+
+### How EJS Works:
+   **Here's a few examples**
+   
+1. **Tags:**
+   - EJS uses tags to embed JavaScript code within HTML. The default tags are `<% %>` for control flow and `<%= %>` for outputting data.
+   ```
+   <ul>
+     <% for(let i=0; i<5; i++) { %>
+       <li>Item <%= i+1 %></li>
+     <% } %>
+   </ul>
+   ```
+   
+2. **Outputting Variables:**
+   - To output the value of a Javascript variable, use `<%= %>` tags.
+   ```
+   <p>Welcome, <%= username %>!</p>
+   ```
+   
+3. **Control Flow:**
+   - This is a really cool concept and it's the main reason I wanted to use express in my application. It's control flow; EJS supports JavaScript control flow structures like if, for, and while. In simple terms, you can use JS code in your HTML code just by importing express and using a .ejs file.
+   ```
+   <% if (isAdmin) { %>
+      <p>Welcome, Administrator!</p>
+   <% } else { %>
+     <p>Welcome, User!</p>
+   <% } %>
+   ```
+   
+## Integrating EJS with Node.js and Express
+
+### Setting Up EJS:
+
+1. **Install EJS:**
+   - Install the EJS package using `npm install ejs`.
+2. **Configure Express:**
+   - In your Express application, set EJS as the view engine.
+   ```
+   const express = require('express');
+   const app = express();
+
+   app.set('view engine', 'ejs');
+   ```
+   
+### Rendering EJS Templates:
+
+1. **Create EJS templates:**
+   - Create an ejs file for example `index.ejs`, `profile.ejs`, etc..
+   ```
+   <!--index.ejs-->
+   <html>
+   <head>
+     <title><%= title %></title>
+   </head>
+   <body>
+     <h1>Welcome to <%= title %></h1>
+   </body>
+   </html>
+   ```
+   ```
+   <!-- profile.ejs -->
+   <html>
+   <head>
+     <title>User Profile</title>
+   </head>
+   <body>
+     <p>Welcome, <%= username %>!</p>
+     <% if (isAdmin) { %>
+       <p>You have administrative privileges.</p>
+     <% } %>
+   </body>
+   </html>
+   ```
+   
+2. **Render Templates in Express Routes:**
+   - Use `res.render()` in your Express route handlers to render EJS templates.
+   ```
+   app.get('/', (req, res) => {
+     res.render('index', { title: 'Home Page' });
+   });
+   
+   app.get('/profile', (req, res) => {
+      res.render('profile', { username: 'JohnDoe', isAdmin: true });
+   });
+   ```
+
+### Passing Data to Templates:
+
+1. **Provide Data with `res.render()`:**
+   - Pass data to EJS templates by providing an object as the second argument to `res.render()`.
+   ```
+   app.get('/profile', (req, res) => {
+      res.render('profile', { username: 'JohnDoe', isAdmin: true });
+   });
+   ```
+   
+2. **Access Data in your Templates:**
+   - Access the data in your EJS templates using the embedded JavaScript syntax.
+   ```
+   <p>Welcome, <%= username %>!</p>
+   <% if (isAdmin) { %>
+     <p>You have administrative privileges.</p>
+   <% } %>
+   ```
+   
+Finally, with all these intro things and very straight forward pieces of code, EJS should be clearer and easier to establish in your own code now. Please feel free to use any of my code to learn more and to increase learning!
+**Have fun coding!**
+Below are all the setups and usage skip if you don't want to run the on your own device.
+   
 ## Usage
 
 ### For Clients:
