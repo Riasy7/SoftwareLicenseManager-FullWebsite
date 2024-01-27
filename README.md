@@ -1,6 +1,6 @@
 # AJA Software Licenses' Manager
 
-This project is a comprehensive Software Licensing Manager Website incorporating Bootstrap code, licensed under the MIT License.
+This project is a comprehensive Software Licensing Manager Website. Express and Node.js are thouroughly used to create the back end of this website. If you wish to use this website and run the back-end, with the SQL db, add all the dependencies to your project and please refer to the below instructions.
 
 ## Usage
 
