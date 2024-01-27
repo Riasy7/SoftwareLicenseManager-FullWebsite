@@ -1,6 +1,8 @@
 # AJA Software Licenses' Manager
 
-This project is a comprehensive Software Licensing Manager Website. Express and Node.js are thouroughly used to create the back end of this website. If you wish to use this website and run the back-end, with the SQL db, add all the dependencies to your project and please refer to the below instructions.
+This repo is the FULL website with both upgraded front-end features and back-end implemented features. This is the completed Software License Manager Website from my other repository where I showcase the front-end HTML aspect only. If you wish to look at the HTML only visit this repo https://github.com/Riasy7/SoftwareLicenseManager-HTML/. And if you wish view the front-end to get a feel of the webiste please visit this page where I uploaded html only static pages to showcase the website feel and look. https://riasy7.github.io/SoftwareLicenseManager-HTML/
+
+Anywyas, Express and Node.js are thouroughly used to create the back end of this website. If you wish to use this website and run the back-end, with the SQL db, add all the dependencies to your project and please refer to the below instructions.
 
 However, before hopping into the instructions, here is a quick rundown/explanation or even just an introduction to some EJS concepts to help you utilize it if you are new to it or to increase your knowledge on it.
 
